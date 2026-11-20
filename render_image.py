@@ -120,6 +120,16 @@ def icon_space(d, x, y):
     d.ellipse([u(x + 35), u(y + 31), u(x + 41), u(y + 37)], fill=(242, 194, 48))
 
 
+def icon_summit(d, x, y):
+    d.rectangle([u(x), u(y), u(x + 82), u(y + 82)], fill=(24, 58, 74))
+    gold = (242, 194, 48)
+    for cx in (21, 41, 61):
+        star(d, x + cx, y + 20, 7, gold)
+    d.rectangle([u(x + 12), u(y + 48), u(x + 70), u(y + 58)], fill=gold)
+    d.rectangle([u(x + 18), u(y + 58), u(x + 24), u(y + 70)], fill=gold)
+    d.rectangle([u(x + 58), u(y + 58), u(x + 64), u(y + 70)], fill=gold)
+
+
 def icon_europe(d, x, y):
     d.rectangle([u(x), u(y), u(x + 82), u(y + 82)], fill=(39, 70, 144))
     for i in range(12):
@@ -169,8 +179,8 @@ def icon_world(d, x, y):
     d.line([u(x + 34), u(y + 64), u(x + 48), u(y + 64)], fill=gold, width=u(3))
 
 
-ICONS = {"space": icon_space, "europe": icon_europe, "us": icon_us,
-         "asia": icon_asia, "world": icon_world}
+ICONS = {"space": icon_space, "europe": icon_europe, "summit": icon_summit,
+         "us": icon_us, "asia": icon_asia, "world": icon_world}
 
 
 # ---------------------------------------------------------------- lead art
